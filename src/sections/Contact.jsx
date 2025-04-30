@@ -94,7 +94,7 @@ const Contact = () => {
               name="email"
               type="email"
               className="field-input field-input-focus"
-              placeholder="JohnDoe@email.com"
+              placeholder="mrkrisshu@gmail.com"
               autoComplete="email"
               value={formData.email}
               onChange={handleChange}
