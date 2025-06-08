@@ -18,6 +18,8 @@ export function Frameworks() {
     "tailwindcss",
     "vitejs",
     "wordpress",
+    "java",
+    "python",
   ];
   return (
     <div className="relative flex h-[15rem] w-full flex-col items-center justify-center">
