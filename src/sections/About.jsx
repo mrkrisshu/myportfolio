@@ -35,7 +35,7 @@ const About = () => {
               {/* Photo container */}
               <div className="relative rounded-full overflow-hidden bg-gray-900 p-0.5">
                 <img
-                  src="assets/krishna-photo.jpg"
+                  src="assets/krishna-photo.jpeg"
                   alt="Krishna Bantola - Full Stack Developer"
                   className="relative w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 object-cover object-top scale-105 rounded-full brightness-105 contrast-[1.05] hover:brightness-110 hover:contrast-[1.1] hover:scale-110 transition-all duration-300"
                   style={{
