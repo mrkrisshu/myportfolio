@@ -26,31 +26,37 @@ const About = () => {
         
         {/* Grid 1 - Introduction with your photo */}
         <article className="flex items-end grid-default-color grid-1 relative overflow-hidden">
-          {/* Your professional photo */}
-          <div className="absolute top-4 right-4 md:top-6 md:right-6 z-20">
+          {/* Your professional photo - Enhanced version */}
+          <div className="absolute top-4 right-4 md:top-8 md:right-8 z-20 group">
             <div className="relative">
-              {/* Gradient border effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-md opacity-75"></div>
-              <picture>
-                <source srcSet="assets/krishna-photo.webp" type="image/webp" />
-                <source srcSet="assets/krishna-photo.jpg" type="image/jpeg" />
+              {/* Animated gradient border */}
+              <div className="absolute -inset-1.5 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 rounded-full blur-md opacity-70 group-hover:opacity-100 animate-pulse"></div>
+              
+              {/* Photo container */}
+              <div className="relative rounded-full overflow-hidden bg-gray-900 p-0.5">
                 <img
                   src="assets/krishna-photo.jpg"
                   alt="Krishna Bantola - Full Stack Developer"
-                  className="relative w-24 h-24 md:w-32 md:h-32 lg:w-36 lg:h-36 rounded-full object-cover border-4 border-white shadow-lg"
+                  className="relative w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 object-cover object-top scale-105 rounded-full filter brightness-105 contrast-105 hover:scale-110 transition-transform duration-300"
+                  style={{
+                    objectPosition: '50% 25%', // Perfect for your photo
+                  }}
                 />
-              </picture>
+              </div>
+              
+              {/* Online status */}
+              <div className="absolute bottom-2 right-2 w-5 h-5 bg-green-500 rounded-full border-2 border-gray-900 shadow-lg"></div>
             </div>
           </div>
 
-          {/* Background decoration (optional - you can remove if you want just your photo) */}
+          {/* Background decoration - made more subtle */}
           <img
             src="assets/coding-pov.png"
             alt="Coding workspace background"
-            className="absolute scale-[1.25] opacity-20 -right-[3rem] -top-[1rem] md:scale-[2] md:left-50 md:inset-y-10 lg:scale-[1.75]"
+            className="absolute scale-[1.25] opacity-10 -right-[3rem] -top-[1rem] md:scale-[2] md:left-50 md:inset-y-10 lg:scale-[1.75]"
           />
           
-          <header className="z-10 max-w-[65%] md:max-w-[70%]">
+          <header className="z-10 max-w-[60%] md:max-w-[65%]">
             <h3 className="headtext">Hi, I'm Krishna Bantola</h3>
             <p className="subtext">
               Over the last 4 years, I developed my frontend and backend dev
@@ -86,7 +92,7 @@ const About = () => {
           <div className="z-10 w-[50%]">
             <h3 className="headtext">Time Zone</h3>
             <p className="subtext">
-              I'm based in Mars, and open to remote work worldwide
+              I'm based in Nepal, and open to remote work worldwide
             </p>
           </div>
           <figure className="absolute left-[30%] top-[10%]" aria-label="Interactive globe">
@@ -117,20 +123,6 @@ const About = () => {
             <Frameworks />
           </figure>
         </article>
-
-        {/* Optional Grid 6 - Additional photo or content */}
-        {/* Uncomment if you want a dedicated photo section
-        <div className="grid-default-color grid-6 flex items-center justify-center p-6">
-          <div className="relative w-full h-full">
-            <img
-              src="assets/krishna-working.jpg"
-              alt="Krishna Bantola working on a project"
-              className="rounded-2xl w-full h-full object-cover shadow-xl"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-2xl" />
-          </div>
-        </div>
-        */}
       </div>
     </section>
   );
