@@ -26,26 +26,26 @@ const About = () => {
         
         {/* Grid 1 - Introduction with your photo */}
         <article className="flex items-end grid-default-color grid-1 relative overflow-hidden">
-          {/* Your professional photo - Enhanced version */}
+          {/* Your professional photo - Pure Tailwind version */}
           <div className="absolute top-4 right-4 md:top-8 md:right-8 z-20 group">
             <div className="relative">
-              {/* Animated gradient border */}
-              <div className="absolute -inset-1.5 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 rounded-full blur-md opacity-70 group-hover:opacity-100 animate-pulse"></div>
+              {/* Animated gradient border using Tailwind's animate-pulse */}
+              <div className="absolute -inset-1.5 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 rounded-full blur-md opacity-70 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
               
               {/* Photo container */}
               <div className="relative rounded-full overflow-hidden bg-gray-900 p-0.5">
                 <img
                   src="assets/krishna-photo.jpg"
                   alt="Krishna Bantola - Full Stack Developer"
-                  className="relative w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 object-cover object-top scale-105 rounded-full filter brightness-105 contrast-105 hover:scale-110 transition-transform duration-300"
+                  className="relative w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 object-cover object-top scale-105 rounded-full brightness-105 contrast-[1.05] hover:brightness-110 hover:contrast-[1.1] hover:scale-110 transition-all duration-300"
                   style={{
-                    objectPosition: '50% 25%', // Perfect for your photo
+                    objectPosition: '50% 25%',
                   }}
                 />
               </div>
               
-              {/* Online status */}
-              <div className="absolute bottom-2 right-2 w-5 h-5 bg-green-500 rounded-full border-2 border-gray-900 shadow-lg"></div>
+              {/* Online status with Tailwind's animate-pulse */}
+              <div className="absolute bottom-2 right-2 w-5 h-5 bg-green-500 rounded-full border-2 border-gray-900 shadow-lg animate-pulse"></div>
             </div>
           </div>
 
@@ -92,7 +92,7 @@ const About = () => {
           <div className="z-10 w-[50%]">
             <h3 className="headtext">Time Zone</h3>
             <p className="subtext">
-              I'm based in Nepal, and open to remote work worldwide
+              I'm based in Mars, and open to remote work worldwide
             </p>
           </div>
           <figure className="absolute left-[30%] top-[10%]" aria-label="Interactive globe">
