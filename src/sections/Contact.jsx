@@ -42,7 +42,7 @@ const Contact = () => {
       // Send notification email to you
       const notificationResult = await emailjs.send(
         "service_0ltmbn5",  // Your Service ID
-        "template_tduit18", // Your Contact Us Template ID
+        "template_l798s6j", // Your Contact Us Template ID (UPDATED)
         {
           from_name: formData.name,
           to_name: "Krishna",
