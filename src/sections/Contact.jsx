@@ -110,7 +110,7 @@ const Contact = () => {
               name="name"
               type="text"
               className="field-input field-input-focus"
-              placeholder="John Doe"
+              placeholder="Your Name"
               autoComplete="name"
               value={formData.name}
               onChange={handleChange}
@@ -129,7 +129,7 @@ const Contact = () => {
               name="email"
               type="email"
               className="field-input field-input-focus"
-              placeholder="johndoe@example.com"
+              placeholder="Your Gmail"
               autoComplete="email"
               value={formData.email}
               onChange={handleChange}
