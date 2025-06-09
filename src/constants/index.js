@@ -11,7 +11,7 @@ export const myProjects = [
       "Designed admin panel for inventory management, order tracking, and sales reports.",
       "Created responsive UI with HTML5, CSS3, and JavaScript for optimal user experience.",
     ],
-    href: "https://your-grocery-site-link.com", // Add your live link if available
+    href: "https://bhuvaneswaristores.great-site.net/", // Add your live link if available
     logo: "",
     image: "/assets/projects/grocery-store.jpg", // Add your project screenshot
     tags: [
@@ -49,7 +49,7 @@ export const myProjects = [
       "Created analytics dashboard to track learning progress and identify areas for improvement.",
       "Built responsive interface with real-time updates and smooth animations.",
     ],
-    href: "https://your-education-app-link.com", // Add your live link if available
+    href: "https://edumasteryy.vercel.app/app", // Add your live link if available
     logo: "",
     image: "/assets/projects/education-app.jpg", // Add your project screenshot
     tags: [
