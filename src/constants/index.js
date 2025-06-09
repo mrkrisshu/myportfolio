@@ -11,9 +11,9 @@ export const myProjects = [
       "Designed admin panel for inventory management, order tracking, and sales reports.",
       "Created responsive UI with HTML5, CSS3, and JavaScript for optimal user experience.",
     ],
-    href: "https://bhuvaneswaristores.great-site.net/", // Add your live link if available
+    href: "https://bhuvaneswaristores.great-site.net/",
     logo: "",
-    image: "/assets/projects/grocery-store.jpg", // Add your project screenshot
+    image: "/assets/projects/grocery-store.jpg",
     tags: [
       {
         id: 1,
@@ -49,9 +49,9 @@ export const myProjects = [
       "Created analytics dashboard to track learning progress and identify areas for improvement.",
       "Built responsive interface with real-time updates and smooth animations.",
     ],
-    href: "https://edumasteryy.vercel.app/", // Add your live link if available
+    href: "https://edumasteryy.vercel.app/",
     logo: "",
-    image: "/assets/projects/education-app.jpg", // Add your project screenshot
+    image: "/assets/projects/education-app.jpg",
     tags: [
       {
         id: 1,
@@ -80,7 +80,7 @@ export const myProjects = [
 export const mySocials = [
   {
     name: "WhatsApp",
-    href: "Wa.me/+917022696385",
+    href: "https://wa.me/+917022696385",
     icon: "/assets/socials/whatsApp.svg",
   },
   {
@@ -97,36 +97,39 @@ export const mySocials = [
 
 export const experiences = [
   {
-    title: "Software Developer",
-    job: "Security & Defense Projects",
-    date: "2021-2023",
+    title: "MCA Student",
+    job: "Kristu Jayanti College",
+    date: "2024 - Present",
     contents: [
-      "Enhanced application security and developed new features, adhering to standards set by the Passive Defense Organization and National Cyberspace Center.",
-      "Designed and implemented intuitive map interfaces using MapsUI, enhancing user experience and enabling seamless interactive map integration.",
-      "Developed applications for industrial automation, leveraging C++ and the Fatek API for PLC communication.",
-      "Enhanced responsiveness and usability of applications using Windows Forms and WPF frameworks.",
-      "Executed XML to SVG conversions using X-DOM, ensuring dynamic and efficient data visualization.",
+      "Pursuing Master of Computer Applications with focus on advanced software development and system design.",
+      "Completed coursework in Data Structures, Algorithms, Database Management Systems, and Web Technologies.",
+      "Developed multiple academic projects including e-commerce platforms and educational applications.",
+      "Actively participating in coding competitions and technical workshops to enhance programming skills.",
+      "Maintaining strong academic performance while building practical development experience through personal projects.",
     ],
   },
   {
-    title: "Back-End Developer",
-    job: "Car Manufacture",
-    date: "2023-2024",
+    title: "Web Development Trainee",
+    job: "ByteBrainy",
+    date: "Oct 2023 - Dec 2023",
     contents: [
-      "Engineered systems for large-scale data ingestion and analysis, ensuring efficient data processing and storage.",
-      "Developed back-end systems enabling vehicle-to-cloud communication for telemetry, diagnostics, and remote control:",
-      "✅ Implemented secure APIs, following ISO 26262 automotive safety standards.",
-      "✅ Ensured data privacy for customers and partners through industry-compliant protocols.",
-      "✅ Delivered remote features like over-the-air updates, real-time tracking, and remote start capabilities.",
+      "Completed intensive 3-month web development course covering modern full-stack technologies.",
+      "Mastered front-end technologies including HTML5, CSS3, JavaScript, and React.js framework.",
+      "Gained hands-on experience with backend development using Node.js, Express.js, and database management.",
+      "Built real-world projects including a fully functional e-commerce website with payment integration.",
+      "Learned industry best practices for responsive design, version control with Git, and agile development methodologies.",
     ],
   },
   {
-    title: "Freelance Developer",
+    title: "Freelance Web Developer",
     job: "Self-Employed",
-    date: "2025-Present",
+    date: "2023 - Present",
     contents: [
-      "Created a personal portfolio using Three.js, React, Vite, and WebAPI to showcase technical expertise.",
-      "Continuously enhancing technical skills and expanding expertise in modern web development and back-end technologies.",
+      "Developing custom web solutions for clients using modern technologies like React, Next.js, and Tailwind CSS.",
+      "Created interactive portfolio websites using Three.js for 3D visualizations and animations.",
+      "Building full-stack applications with features like user authentication, real-time updates, and secure payment processing.",
+      "Continuously learning new technologies and frameworks to deliver cutting-edge solutions.",
+      "Managing complete project lifecycle from requirement gathering to deployment and maintenance.",
     ],
   },
 ];
