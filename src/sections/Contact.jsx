@@ -37,11 +37,12 @@ const Contact = () => {
     setIsLoading(true);
 
     try {
-      console.log("Form submitted:", formData);
+      console.log("Sending email...", formData);
       
-      const result = await emailjs.send(
+      // Send notification email to you
+      const notificationResult = await emailjs.send(
         "service_0ltmbn5",  // Your Service ID
-        "template_tduit18", // Your Template ID
+        "template_tduit18", // Your Contact Us Template ID
         {
           from_name: formData.name,
           to_name: "Krishna",
@@ -51,14 +52,30 @@ const Contact = () => {
         }
       );
       
-      console.log("Email sent successfully:", result);
+      console.log("Notification sent:", notificationResult);
+      
+      // Send auto-reply to the person who contacted you
+      const autoReplyResult = await emailjs.send(
+        "service_0ltmbn5",  // Your Service ID
+        "template_b8wppte", // Your Auto-Reply Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          to_name: formData.name,
+        }
+      );
+      
+      console.log("Auto-reply sent:", autoReplyResult);
+      
+      // Success - clear form and show success message
       setIsLoading(false);
       setFormData({ name: "", email: "", message: "" });
-      showAlertMessage("success", "Your message has been sent successfully!");
+      showAlertMessage("success", "Message sent successfully! Check your email for confirmation.");
+      
     } catch (error) {
       setIsLoading(false);
       console.error("EmailJS error:", error);
-      showAlertMessage("danger", "Failed to send message. Please try again.");
+      showAlertMessage("danger", "Failed to send message. Please try again later.");
     }
   };
 
@@ -71,7 +88,9 @@ const Contact = () => {
         color={"#ffffff"}
         refresh
       />
+      
       {showAlert && <Alert type={alertType} text={alertMessage} />}
+      
       <div className="flex flex-col items-center justify-center max-w-md p-5 mx-auto border border-white/10 rounded-2xl bg-primary">
         <div className="flex flex-col items-start w-full gap-5 mb-10">
           <h2 className="text-heading">Let's Talk</h2>
@@ -80,9 +99,10 @@ const Contact = () => {
             platform, or bring a unique project to life, I'm here to help
           </p>
         </div>
+        
         <form className="w-full" onSubmit={handleSubmit}>
           <div className="mb-5">
-            <label htmlFor="name" className="feild-label">
+            <label htmlFor="name" className="field-label">
               Full Name
             </label>
             <input
@@ -90,15 +110,18 @@ const Contact = () => {
               name="name"
               type="text"
               className="field-input field-input-focus"
-              placeholder="mrkrisshu"
+              placeholder="John Doe"
               autoComplete="name"
               value={formData.name}
               onChange={handleChange}
               required
+              minLength="2"
+              maxLength="50"
             />
           </div>
+          
           <div className="mb-5">
-            <label htmlFor="email" className="feild-label">
+            <label htmlFor="email" className="field-label">
               Email
             </label>
             <input
@@ -106,36 +129,53 @@ const Contact = () => {
               name="email"
               type="email"
               className="field-input field-input-focus"
-              placeholder="mrkrisshu@gmail.com"
+              placeholder="johndoe@example.com"
               autoComplete="email"
               value={formData.email}
               onChange={handleChange}
               required
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
             />
           </div>
+          
           <div className="mb-5">
-            <label htmlFor="message" className="feild-label">
+            <label htmlFor="message" className="field-label">
               Message
             </label>
             <textarea
               id="message"
               name="message"
-              type="text"
               rows="4"
-              className="field-input field-input-focus"
-              placeholder="Share your thoughts..."
+              className="field-input field-input-focus resize-none"
+              placeholder="Share your thoughts or project ideas..."
               autoComplete="off"
               value={formData.message}
               onChange={handleChange}
               required
+              minLength="10"
+              maxLength="500"
             />
+            <p className="mt-1 text-xs text-neutral-500">
+              {formData.message.length}/500 characters
+            </p>
           </div>
+          
           <button
             type="submit"
-            className="w-full px-1 py-3 text-lg text-center rounded-md cursor-pointer bg-radial from-lavender to-royal hover-animation disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full px-4 py-3 text-lg font-medium text-white text-center rounded-md cursor-pointer bg-gradient-to-r from-lavender to-royal hover:opacity-90 transition-opacity duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={isLoading}
           >
-            {!isLoading ? "Send Message" : "Sending..."}
+            {isLoading ? (
+              <span className="flex items-center justify-center">
+                <svg className="animate-spin h-5 w-5 mr-3" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                </svg>
+                Sending...
+              </span>
+            ) : (
+              "Send Message"
+            )}
           </button>
         </form>
       </div>
