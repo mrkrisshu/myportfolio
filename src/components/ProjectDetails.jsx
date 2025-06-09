@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import React from "react";
 
 const ProjectDetails = ({
@@ -17,70 +18,76 @@ const ProjectDetails = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="relative bg-gray-900 rounded-lg p-8 max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-hidden backdrop-blur-sm">
+      {/* Background overlay with animation */}
+      <motion.div
+        className="absolute inset-0 bg-black/50"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        onClick={closeModal}
+      />
+      
+      {/* Modal content with animation */}
+      <motion.div
+        className="relative max-w-2xl mx-4 border shadow-sm rounded-2xl bg-gradient-to-l from-midnight to-navy border-white/10"
+        initial={{ opacity: 0, scale: 0.5, y: 100 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.5, y: 100 }}
+        transition={{ type: "spring", duration: 0.5 }}
+      >
         {/* Close button */}
         <button
           onClick={closeModal}
-          className="absolute top-4 right-4 text-white hover:text-gray-300"
+          className="absolute p-2 rounded-sm top-5 right-5 bg-midnight hover:bg-gray-500 transition-colors z-10"
         >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
+          <img src="assets/close.svg" className="w-6 h-6" alt="close" />
         </button>
-
+        
         {/* Project image */}
-        {image && (
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-64 object-cover rounded-lg mb-6"
-          />
-        )}
-
-        {/* Project title */}
-        <h2 className="text-3xl font-bold text-white mb-4">{title}</h2>
-
-        {/* Tags */}
-        <div className="flex gap-2 mb-6 flex-wrap">
-          {tags.map((tag) => (
-            <span
-              key={tag.id}
-              className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm"
-            >
-              {tag.name}
-            </span>
+        <img src={image} alt={title} className="w-full rounded-t-2xl" />
+        
+        <div className="p-5">
+          <h5 className="mb-2 text-2xl font-bold text-white">{title}</h5>
+          <p className="mb-3 font-normal text-neutral-400">{description}</p>
+          
+          {/* Sub descriptions if array */}
+          {Array.isArray(subDescription) && subDescription.map((subDesc, index) => (
+            <p key={index} className="mb-3 font-normal text-neutral-400">{subDesc}</p>
           ))}
+          
+          {/* Sub description if string */}
+          {typeof subDescription === 'string' && (
+            <p className="mb-3 font-normal text-neutral-400">{subDescription}</p>
+          )}
+          
+          <div className="flex items-center justify-between mt-4">
+            <div className="flex gap-3">
+              {tags.map((tag) => (
+                <motion.img
+                  key={tag.id}
+                  src={tag.path || tag.icon}
+                  alt={tag.name}
+                  className="rounded-lg size-10 hover-animation"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                />
+              ))}
+            </div>
+            
+            {/* View Project button */}
+            <motion.button
+              onClick={handleViewProject}
+              className="inline-flex items-center gap-1 font-medium cursor-pointer hover-animation text-white hover:text-blue-400 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              View Project
+              <img src="assets/arrow-up.svg" className="size-4" alt="arrow" />
+            </motion.button>
+          </div>
         </div>
-
-        {/* Description */}
-        <p className="text-gray-300 mb-4">{description}</p>
-
-        {/* Sub-description if available */}
-        {subDescription && (
-          <p className="text-gray-400 mb-6">{subDescription}</p>
-        )}
-
-        {/* View Project button */}
-        {href && (
-          <button
-            onClick={handleViewProject}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded transition duration-300"
-          >
-            View Project
-          </button>
-        )}
-      </div>
+      </motion.div>
     </div>
   );
 };
