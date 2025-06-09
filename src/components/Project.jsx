@@ -1,53 +1,49 @@
-import React, { useState } from "react";
-import ProjectDetails from "./ProjectDetails";
+import { useState } from "react";
+import Project from "../components/Project";
+import { myProjects } from "../constants";
+import { motion, useMotionValue, useSpring } from "motion/react";
 
-const Project = ({
-  title,
-  description,
-  subDescription,
-  href,
-  image,
-  tags,
-  setPreview,
-}) => {
-  const [isHidden, setIsHidden] = useState(false);
+const Projects = () => {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const springX = useSpring(x, { damping: 10, stiffness: 50 });
+  const springY = useSpring(y, { damping: 10, stiffness: 50 });
+  
+  const handleMouseMove = (e) => {
+    x.set(e.clientX + 20);
+    y.set(e.clientY + 20);
+  };
+  
+  const [preview, setPreview] = useState(null);
+  
   return (
-    <>
-      <div
-        className="flex-wrap items-center justify-between py-10 space-y-14 sm:flex sm:space-y-0"
-        onMouseEnter={() => setPreview(image)}
-        onMouseLeave={() => setPreview(null)}
-      >
-        <div>
-          <p className="text-2xl">{title}</p>
-          <div className="flex gap-5 mt-2 text-sand">
-            {tags.map((tag) => (
-              <span key={tag.id}>{tag.name}</span>
-            ))}
-          </div>
+    <section
+      onMouseMove={handleMouseMove}
+      className="relative c-space py-16"
+    >
+      <h2 className="text-heading">My Selected Projects</h2>
+      
+      {/* Horizontal divider line - no changes needed here */}
+      <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent mt-12 h-[1px] w-full" />
+      
+      {/* Updated grid without gaps that might cause white lines */}
+      <div className="mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {myProjects.map((project) => (
+            <Project key={project.id} {...project} setPreview={setPreview} />
+          ))}
         </div>
-        <button
-          onClick={() => setIsHidden(true)}
-          className="flex items-center gap-1 cursor-pointer hover-animation"
-        >
-          Read More
-          <img src="assets/arrow-right.svg" className="w-5" />
-        </button>
       </div>
-      <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent h-[1px] w-full" />
-      {isHidden && (
-        <ProjectDetails
-          title={title}
-          description={description}
-          subDescription={subDescription}
-          image={image}
-          tags={tags}
-          href={href}
-          closeModal={() => setIsHidden(false)}
+      
+      {preview && (
+        <motion.img
+          className="fixed top-0 left-0 z-50 object-cover h-56 rounded-lg shadow-lg pointer-events-none w-80"
+          src={preview}
+          style={{ x: springX, y: springY }}
         />
       )}
-    </>
+    </section>
   );
 };
 
-export default Project;
+export default Projects;
