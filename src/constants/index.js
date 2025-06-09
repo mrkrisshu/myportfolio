@@ -49,7 +49,7 @@ export const myProjects = [
       "Created analytics dashboard to track learning progress and identify areas for improvement.",
       "Built responsive interface with real-time updates and smooth animations.",
     ],
-    href: "https://edumasteryy.vercel.app/app", // Add your live link if available
+    href: "https://edumasteryy.vercel.app/", // Add your live link if available
     logo: "",
     image: "/assets/projects/education-app.jpg", // Add your project screenshot
     tags: [
