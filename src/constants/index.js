@@ -97,39 +97,39 @@ export const mySocials = [
 
 export const experiences = [
   {
-    title: "MCA Student",
+    title: "Web Development Intern 💻",
+    job: "ByteBrainy",
+    date: "August 2023 - December 2023",
+    contents: [
+      "🚀 Completed intensive 3-month web development bootcamp covering modern full-stack technologies.",
+      "⚛️ Mastered front-end technologies including HTML5, CSS3, JavaScript, and React.js framework.",
+      "🔧 Gained hands-on experience with backend development using Node.js, Express.js, and database management.",
+      "🛒 Built real-world projects including a fully functional e-commerce website with secure payment integration.",
+      "📱 Learned industry best practices for responsive design, version control with Git, and agile development methodologies.",
+    ],
+  },
+  {
+    title: "Freelance Web Developer 🌟",
+    job: "Self-Employed",
+    date: "2024 - 2025",
+    contents: [
+      "🎨 Developing custom web solutions for clients using modern technologies like React, Next.js, and Tailwind CSS.",
+      "🎮 Created interactive portfolio websites using Three.js for immersive 3D visualizations and animations.",
+      "🔐 Building full-stack applications with features like JWT authentication, real-time updates, and secure payment processing.",
+      "📈 Successfully delivered 5+ client projects ranging from portfolio sites to complex web applications.",
+      "🌐 Managing complete project lifecycle from requirement gathering to deployment on platforms like Vercel and Netlify.",
+    ],
+  },
+  {
+    title: "MCA Student 🎓",
     job: "Kristu Jayanti College",
     date: "2024 - Present",
     contents: [
-      "Pursuing Master of Computer Applications with focus on advanced software development and system design.",
-      "Completed coursework in Data Structures, Algorithms, Database Management Systems, and Web Technologies.",
-      "Developed multiple academic projects including e-commerce platforms and educational applications.",
-      "Actively participating in coding competitions and technical workshops to enhance programming skills.",
-      "Maintaining strong academic performance while building practical development experience through personal projects.",
-    ],
-  },
-  {
-    title: "Web Development Trainee",
-    job: "ByteBrainy",
-    date: "Oct 2023 - Dec 2023",
-    contents: [
-      "Completed intensive 3-month web development course covering modern full-stack technologies.",
-      "Mastered front-end technologies including HTML5, CSS3, JavaScript, and React.js framework.",
-      "Gained hands-on experience with backend development using Node.js, Express.js, and database management.",
-      "Built real-world projects including a fully functional e-commerce website with payment integration.",
-      "Learned industry best practices for responsive design, version control with Git, and agile development methodologies.",
-    ],
-  },
-  {
-    title: "Freelance Web Developer",
-    job: "Self-Employed",
-    date: "2023 - Present",
-    contents: [
-      "Developing custom web solutions for clients using modern technologies like React, Next.js, and Tailwind CSS.",
-      "Created interactive portfolio websites using Three.js for 3D visualizations and animations.",
-      "Building full-stack applications with features like user authentication, real-time updates, and secure payment processing.",
-      "Continuously learning new technologies and frameworks to deliver cutting-edge solutions.",
-      "Managing complete project lifecycle from requirement gathering to deployment and maintenance.",
+      "📚 Pursuing Master of Computer Applications at Kristu Jayanti College, Bangalore with focus on advanced software development.",
+      "💡 Completed coursework in Data Structures, Algorithms, Database Management Systems, and Web Technologies.",
+      "🏆 Developed multiple academic projects including e-commerce platforms and educational applications.",
+      "👨‍💻 Actively participating in coding competitions, hackathons, and technical workshops to enhance programming skills.",
+      "📊 Maintaining strong academic performance (CGPA: 8.5+) while building practical development experience through personal projects.",
     ],
   },
 ];
