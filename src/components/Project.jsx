@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { AnimatePresence } from "motion/react";
 import ProjectDetails from "./ProjectDetails";
 
 const Project = ({
@@ -38,17 +39,20 @@ const Project = ({
       
       <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent h-[1px] w-full" />
       
-      {isHidden && (
-        <ProjectDetails
-          title={title}
-          description={description}
-          subDescription={subDescription}
-          image={image}
-          tags={tags}
-          href={href}
-          closeModal={() => setIsHidden(false)}
-        />
-      )}
+      {/* AnimatePresence for exit animations */}
+      <AnimatePresence>
+        {isHidden && (
+          <ProjectDetails
+            title={title}
+            description={description}
+            subDescription={subDescription}
+            image={image}
+            tags={tags}
+            href={href}
+            closeModal={() => setIsHidden(false)}
+          />
+        )}
+      </AnimatePresence>
     </>
   );
 };
