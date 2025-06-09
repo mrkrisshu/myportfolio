@@ -15,7 +15,7 @@ const Footer = () => {
           </a>
         ))}
       </div>
-      <p>© 2026 Krishna. All rights reserved.</p>
+      <p>© 2025 Krishna. All rights reserved.</p>
     </section>
   );
 };
